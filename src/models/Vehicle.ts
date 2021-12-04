@@ -15,7 +15,7 @@ export interface VehicleInterface {
 
 export interface VehiclesDataInterface {
 	count: number;
-	next: string;
+	next: string | null;
 	previous: string | null,
 	results: VehicleInterface[];
 }

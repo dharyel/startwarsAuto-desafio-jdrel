@@ -3,6 +3,6 @@ export const colorTheme = {
     darkBlue: '#14213D',
     veryDarkBlue: '#090f1c',
     gold: '#FCA311',
-    gray: '#E5E5E5',
+    gray: '#AAA',
     white: '#FFFFFF'
 };
