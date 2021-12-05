@@ -26,12 +26,15 @@ export const Container = styled.div`
 
 export const MainInfo = styled.div`
     width: 300px;
+    height: 100px;
     margin-bottom: 15px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    text-align: center;
 `;
 
 export const Name = styled.h2` 
@@ -60,6 +63,7 @@ export const ItemImg = styled.img`
 `;
 
 export const Details = styled.div`
+    height: 200px;
     width: 80%;
     padding: 30px;
     margin-bottom: 15px;
