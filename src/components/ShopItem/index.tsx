@@ -1,6 +1,10 @@
 import { VehicleInterface } from '../../models/Vehicle';
 import {useNavigate} from "react-router-dom";
 
+import {observer} from 'mobx-react-lite';
+import VehicleStore from "../../stores/VehicleStore"; 
+import {useContext} from 'react';
+
 import { 
     Container, 
     MainInfo,
@@ -18,16 +22,18 @@ import {
 import vehicleImg from '../../assets/images/vehicles/VV_LansSpeeder.png';
 
 
-export const ShopItem = (item: VehicleInterface) => {
+const ShopItem = (item: VehicleInterface) => {
     const navigate = useNavigate();
+    const vehiclesStore = useContext(VehicleStore);
+    const {SetSelectedVehicle} = vehiclesStore;
+
 
     function handleBuyButtonClick(){
         //salvar os dados do item (VehicleInterface)
-        
+        SetSelectedVehicle(item);
         console.log("comprou");
         //redirecionar para a página checkout
         navigate('/checkout')
-        
     }
 
     return (
@@ -85,3 +91,5 @@ export const ShopItem = (item: VehicleInterface) => {
         </Container>
     );
 }
+
+export default observer(ShopItem);

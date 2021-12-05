@@ -1,5 +1,5 @@
 import { VehicleInterface } from '../../models/Vehicle';
-import { ShopItem } from '../ShopItem';
+import ShopItem from '../ShopItem';
 import { Container } from './styles';
 
 interface ShopItemsProps{
