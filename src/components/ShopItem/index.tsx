@@ -33,6 +33,7 @@ const ShopItem = (item: VehicleInterface) => {
         SetSelectedVehicle(item);
         console.log("comprou");
         //redirecionar para a página checkout
+        window.scrollTo(0, 0);
         navigate('/checkout')
     }
 
