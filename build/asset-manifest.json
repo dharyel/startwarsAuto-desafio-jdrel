@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "./static/css/main.852e8a3c.chunk.css",
+    "main.js": "./static/js/main.4ae6b199.chunk.js",
+    "main.js.map": "./static/js/main.4ae6b199.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.ac599a12.js",
+    "runtime-main.js.map": "./static/js/runtime-main.ac599a12.js.map",
+    "static/js/2.dbbd3884.chunk.js": "./static/js/2.dbbd3884.chunk.js",
+    "static/js/2.dbbd3884.chunk.js.map": "./static/js/2.dbbd3884.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.852e8a3c.chunk.css.map": "./static/css/main.852e8a3c.chunk.css.map",
+    "static/js/2.dbbd3884.chunk.js.LICENSE.txt": "./static/js/2.dbbd3884.chunk.js.LICENSE.txt",
+    "static/media/VV_LansSpeeder.7b6d1934.png": "./static/media/VV_LansSpeeder.7b6d1934.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac599a12.js",
+    "static/js/2.dbbd3884.chunk.js",
+    "static/css/main.852e8a3c.chunk.css",
+    "static/js/main.4ae6b199.chunk.js"
+  ]
+}

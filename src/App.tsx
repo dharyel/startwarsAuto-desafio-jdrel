@@ -2,11 +2,11 @@ import React from 'react';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import CheckoutResult from './pages/CheckoutResult';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter , Routes, Route} from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter >
     
       <Routes>
 
@@ -16,7 +16,7 @@ const App = () => {
 
       </Routes>
 
-    </BrowserRouter>
+    </HashRouter >
   );
 }
 

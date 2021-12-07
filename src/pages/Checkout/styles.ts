@@ -75,14 +75,6 @@ export const Infos = styled.fieldset`
     }
 `;
 
-export const DivistorLine = styled.div`
-    margin: 0 30px;
-    height: 100%;
-    width: 2px;
-    
-    background-color: ${colorTheme.veryDarkBlue};
-`;
-
 export const PaymentMethod = styled.div`
     margin-bottom: 20px;
 

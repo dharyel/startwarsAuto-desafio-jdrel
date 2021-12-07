@@ -14,7 +14,6 @@ import {
     CheckoutWrapper, 
     Container, 
     FormikWrapper,
-    DivistorLine, 
     UserPaymentWrapper, 
     Infos,
     CreditCard,
@@ -35,71 +34,70 @@ const Checkout = () => {
 
     const navigate = useNavigate();
 
-        
-        const initialValues = {
-            //userInfo
-            name: '',
-            email: '',
-            tel: '',
-            registryNumber: '',
-            postalCode: '',
-            street: '',
-            number: '',
-            addressComplement: '',
-            city: '',
-            neighborhood: '',
-            state: '',
-            //creditCard
-            creditCardNumber: '',
-            validity: '',
-            ownerName: '',
-            cvv: '',
-        };
+    const initialValues = {
+        //userInfo
+        name: '',
+        email: '',
+        tel: '',
+        registryNumber: '',
+        postalCode: '',
+        street: '',
+        number: '',
+        addressComplement: '',
+        city: '',
+        neighborhood: '',
+        state: '',
+        //creditCard
+        creditCardNumber: '',
+        validity: '',
+        ownerName: '',
+        cvv: '',
+    };
 
-        const schema = Yup.object().shape({
-            name: Yup.string()
-                .min(3, 'Must be 3 characters or greather')
-                .max(30, 'Must be 30 characters or less')
-                .required('Required'),
-            email: Yup.string()
-                .email('Email is invalid')
-                .required('Required'),
-            tel: Yup.string()
-                .min(11,'You need to insert a phone number with only numbers and in the format 00123456789(Example: 47991966020)')
-                .max(11,'You need to insert a phone number with only numbers and in the format 00123456789(Example: 47991966020)')
-                .required('Required'),
-            registryNumber: Yup.string()
-                .min(11, "Registry Number must be with 11 or 14 numbers total")
-                .max(14, 'Registry Number must be with 11 or 14 numbers total')
-                .required('Required'),
-            postalCode: Yup.string()
-                .min(8, "CEP must be 8 digits format")
-                .max(8, 'CEP must be 8 digits format')
-                .required('Required'),
-            street: Yup.string()
-                .required('Required'),
-            number: Yup.string()
-                .required('Required'),
-            addressComplement: Yup.string(),
-            city: Yup.string()
-                .required('Required'),
-            neighborhood: Yup.string()
-                .required('Required'),
-            state: Yup.string()
-                .required('Required'),
-            creditCardNumber: Yup.string()
-                .min(13, 'Must be 13 digits or greather')
-                .max(16, 'Must be 16 digits or less'),
-            validity: Yup.string()
-                .min(4, 'Must be 4 digits (mmyy)')
-                .max(4, 'Must be 4 digits (mmyy)'),
-            ownerName: Yup.string()
-                .min(3, 'Must be 3 characters or greather')
-                .max(30, 'Must be 30 characters or less'),
-            cvv: Yup.string()
-                .min(3, 'Must be 3 digits')
-                .max(3, 'Must be 3 digits'),
-        });
+    const schema = Yup.object().shape({
+        name: Yup.string()
+            .min(3, 'Must be 3 characters or greather')
+            .max(30, 'Must be 30 characters or less')
+            .required('Required'),
+        email: Yup.string()
+            .email('Email is invalid')
+            .required('Required'),
+        tel: Yup.string()
+            .min(11,'You need to insert a phone number with only numbers and in the format 00123456789(Example: 47991966020)')
+            .max(11,'You need to insert a phone number with only numbers and in the format 00123456789(Example: 47991966020)')
+            .required('Required'),
+        registryNumber: Yup.string()
+            .min(11, "Registry Number must be with 11 or 14 numbers total")
+            .max(14, 'Registry Number must be with 11 or 14 numbers total')
+            .required('Required'),
+        postalCode: Yup.string()
+            .min(8, "CEP must be 8 digits format")
+            .max(8, 'CEP must be 8 digits format')
+            .required('Required'),
+        street: Yup.string()
+            .required('Required'),
+        number: Yup.string()
+            .required('Required'),
+        addressComplement: Yup.string(),
+        city: Yup.string()
+            .required('Required'),
+        neighborhood: Yup.string()
+            .required('Required'),
+        state: Yup.string()
+            .required('Required'),
+        creditCardNumber: Yup.string()
+            .min(13, 'Must be 13 digits or greather')
+            .max(16, 'Must be 16 digits or less'),
+        validity: Yup.string()
+            .min(4, 'Must be 4 digits (mmyy)')
+            .max(4, 'Must be 4 digits (mmyy)'),
+        ownerName: Yup.string()
+            .min(3, 'Must be 3 characters or greather')
+            .max(30, 'Must be 30 characters or less'),
+        cvv: Yup.string()
+            .min(3, 'Must be 3 digits')
+            .max(3, 'Must be 3 digits'),
+    });
 
     const handlePaymentMethod = (method: 'boleto' | 'creditCard') => {
         setPaymentMethod(method);
@@ -217,8 +215,6 @@ const Checkout = () => {
                             </CreditCard>
                         </Infos>
                     </UserPaymentWrapper>
-
-                    <DivistorLine />
                     
                     <CheckoutResume 
                         selectedVehicle={selectedVehicle}
