@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
+import CheckoutResult from './pages/CheckoutResult';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
 
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout-result" element={<CheckoutResult />} />
 
       </Routes>
 

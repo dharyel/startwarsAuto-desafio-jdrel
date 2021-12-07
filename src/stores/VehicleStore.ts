@@ -22,7 +22,6 @@ class VehiclesDataStore {
         try{
             this.vehiclesData =(await axios.get(url)).data; 
             window.scrollTo(0, 0);
-            console.log(this.vehiclesData);
         } catch (error) {
             console.log(error);
         }
@@ -37,7 +36,7 @@ class VehiclesDataStore {
 
     get info() {
         //computed vem por último, depois que toda vez que uma variável observável é modificada
-        return console.log("atualizou ", this.vehiclesData);
+        return console.log(this.vehiclesData);
     }
 }
 

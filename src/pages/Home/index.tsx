@@ -9,7 +9,6 @@ import VehicleStore from "../../stores/VehicleStore";
 import {useContext} from 'react';
 
 const Home = () => {
-    //let [vehiclesData, setVehiclesData] = useState<VehiclesDataInterface>({} as VehiclesDataInterface);
     const vehiclesStore = useContext(VehicleStore);
     const {vehiclesData, GetVehiclesData} = vehiclesStore;
 
@@ -23,28 +22,10 @@ const Home = () => {
 
         try{
             GetVehiclesData(url);
-            console.log(vehiclesData);
         } catch (error) {
             console.log(error);
         }
     }
-
-    /*
-    async function GetVehiclesData(url: string){
-        try{
-            setVehiclesData((await axios.get(url)).data); 
-            window.scrollTo(0, 0);
-            console.log(vehiclesData);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        GetVehiclesData('https://swapi.dev/api/vehicles/');
-        console.log("entrou no useeffect");
-    }, []);
-    */
 
     return(
         <Container>

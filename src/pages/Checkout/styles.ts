@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import { colorTheme } from '../../models/Theme';
+import { Formik, Form } from 'formik';
+
+interface CreditCardProps {
+    isCreditCard: boolean;
+}
 
 export const Container = styled.div `
     min-height: 100vh;
@@ -13,6 +18,7 @@ export const Container = styled.div `
     justify-content: flex-start;
     align-items: center;
 
+    /*Texto CHECKOUT*/
     h1 {
         margin-bottom: 15px;
 
@@ -25,108 +31,72 @@ export const Container = styled.div `
     }
 `;
 
-export const CheckoutWrapper = styled.div`
-    width: 80%;
+export const FormikWrapper = styled(Formik)`
+   
+`;
+
+export const CheckoutWrapper = styled(Form)`
+    
+    max-width: 1440px;
     padding: 30px;
-    height: 100vh;
 
     background-color: ${colorTheme.darkBlue};
     border-radius: 30px;
     border: 3px solid ${colorTheme.veryDarkBlue};
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 `;
 
-export const UserPaymentWrapper = styled.div`
 
+export const UserPaymentWrapper = styled.div`
+    display: flex;
+`;
+
+export const Infos = styled.fieldset`
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background-color: ${colorTheme.veryDarkBlue};
+    border: 0;
+
+    margin-right: 30px;
+
+    legend{
+        color: ${colorTheme.gray};
+    }
+
+    h2{
+        font-size: 20px;
+
+        color: ${colorTheme.white};
+    }
 `;
 
 export const DivistorLine = styled.div`
+    margin: 0 30px;
     height: 100%;
     width: 2px;
     
     background-color: ${colorTheme.veryDarkBlue};
 `;
 
-export const ResumeWrapper = styled.div`
-    width: 100%;
-    padding: 30px;
-    height: 100%;
+export const PaymentMethod = styled.div`
+    margin-bottom: 20px;
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+`;
 
-    /*h2=texto 'RESUME' */
-    h2{
-        font-size: 30px;
-        font-family: cursive;
-        
-        color: ${colorTheme.white};
-    }
+export const CreditCard = styled.div<CreditCardProps>`
+    overflow-y: hidden;
+    width: 360px;
+    height: ${({isCreditCard}) => isCreditCard ? '300px' : '0px'};
+    padding: ${({isCreditCard}) => isCreditCard ? '30px' : '0px'};
 
-    hr {
-        width: 95%;
-        height: 1px;
-        margin: 15px;
+    border-radius: 10px;
+    background-color: ${colorTheme.black};
 
-        background-color: ${colorTheme.veryDarkBlue};
-    }
-
-    /*h4=Nome e custo do produto */
-    h4{
-        font-size: 15px;
-        font-family: cursive;
-        
-        color: ${colorTheme.gray};
-    }
-
-    /*h3=Preço total da compra */
-    h3{
-        margin-bottom: 50px;
-
-        font-size: 20px;
-        font-family: cursive;
-        
-        color: ${colorTheme.white};
-
-        /*span=dinheiro */
-        span{
-            color: ${colorTheme.gold};
-        }
-    }
-
-    button {
-        width: 150px;
-        height: 50px;
-        padding: 5px;
-        margin: 2px;
-
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 15px;
-        border:2px solid black;
-        transition: all 0.5s ease-in-out;
-        text-align: center;
-        cursor: pointer;
-
-        :hover{
-            filter: brightness(0.5);
-        }
-    }
-
-    /*Botão de finalizar a compra*/
-    #finishCheckoutButton{
-        color: ${colorTheme.white};
-        background-color: ${colorTheme.veryDarkBlue};
-    }
-
-    /*Botão de cancelar o checkout e voltar para a tela dos véiculos(home)*/
-    #cancelCheckoutButton{
-        color: ${colorTheme.white};
-        background-color: ${colorTheme.error};
-    }
+    transition: all 0.2s ease-in-out;
 `;

@@ -31,7 +31,6 @@ const ShopItem = (item: VehicleInterface) => {
     function handleBuyButtonClick(){
         //salvar os dados do item (VehicleInterface)
         SetSelectedVehicle(item);
-        console.log("comprou");
         //redirecionar para a página checkout
         window.scrollTo(0, 0);
         navigate('/checkout')

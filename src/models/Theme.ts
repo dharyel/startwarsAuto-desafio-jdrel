@@ -7,4 +7,5 @@ export const colorTheme = {
     white: '#FFFFFF',
     success: '#90EE90',
     error: '#400000',
+    lightError: '#F00000',
 };
